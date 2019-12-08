@@ -1,0 +1,58 @@
+﻿
+@if (TempData["save"]== "1")    // Save Message
+{
+<div class="alert alert-success alert-dismissible fade in" role="alert" style="margin-top:60px">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+    </button>
+    <strong>Data Successfully Saved</strong>
+</div>
+}
+@if (TempData["update"] =="1")    // Update Message
+{
+<div class="alert alert-success alert-dismissible fade in" role="alert" style="margin-top:60px">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+    <strong>Data Successfully Updated</strong>
+</div>
+}
+@if (TempData["delete"] == "1")    // Delete Message
+{
+<div class="alert alert-success alert-dismissible fade in" role="alert" style="margin-top:60px">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+    </button>
+    <strong>Data Successfully Deleted</strong>
+</div>
+}
+
+@if (TempData["custom"] != "1" && TempData["custom"] != null)    //Custom
+{
+ <div class="alert alert-danger alert-dismissible fade in" role="alert" style="margin-top:60px">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <strong>@Html.Raw(TempData["custom"].ToString()) </strong>
+</div>
+    
+}
+@if (TempData["warning"] != "1" && TempData["warning"] != null)    //Warning
+{
+    <div class="alert alert-warning alert-dismissible fade in" role="alert" style="margin-top:60px">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <strong>@TempData["warning"] </strong>
+    </div>
+
+}
+
+@if (TempData["success"] != "1" && TempData["success"] != null)    //Success
+{
+    <div class="alert alert-success alert-dismissible fade in" role="alert" style="margin-top:60px">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+        <strong>@TempData["success"] </strong>
+    </div>
+
+}
